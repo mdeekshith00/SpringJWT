@@ -39,7 +39,7 @@ public class Studentserviceimp implements Studentservice {
 	@Override
 	public Student getStudentbyId(int sid) {
 		// TODO Auto-generated method stub
-		Student s1 = repositary.findById(sid).orElseThrow(() -> new StudentNotFound("Student details not Found on this id"));
+		Student s1 = repositary.findById(sid).orElseThrow(() -> new StudentNotFound("Student details not Found on this " + sid));
 		return s1;
 	}
 
@@ -59,10 +59,10 @@ public class Studentserviceimp implements Studentservice {
 		repositary.deleteById(sid);
 		return "deleted.....";
 	}
-	@ExceptionHandler(StudentNotFound.class)
-	public ResponseEntity<?> handleStudentNotFoundException (StudentNotFound exception) {
-		ErrorReponse StudentException = new ErrorReponse("Student", "Sid", "sid");
-		return new ResponseEntity<>(StudentException , HttpStatus.NOT_FOUND);
-	}
+//	@ExceptionHandler(StudentNotFound.class)
+//	public ResponseEntity<?> handleStudentNotFoundException (StudentNotFound exception) {
+//		ErrorReponse StudentException = new ErrorReponse("Student", "Sid", "sid");
+//		return new ResponseEntity<>(StudentException , HttpStatus.NOT_FOUND);
+//	}
 
 }

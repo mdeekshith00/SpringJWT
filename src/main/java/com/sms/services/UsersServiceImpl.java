@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.sms.exception.StudentNotFound;
 import com.sms.model.Users;
 import com.sms.repositary.UsersRepositary;
 
@@ -43,7 +44,8 @@ public class UsersServiceImpl implements UserDetailsService  , UsersService{
 	@Override
 	public Users getById(int id) {
 		// TODO Auto-generated method stub
-		return userRepositary.findById(id).get();
+		Users  u=  userRepositary.findById(id).orElseThrow(() -> new StudentNotFound("Student details not Found on this " + id));
+	    return u;
 	}
 
 	@Override
