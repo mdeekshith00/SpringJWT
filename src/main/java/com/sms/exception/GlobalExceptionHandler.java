@@ -14,11 +14,9 @@ public class GlobalExceptionHandler {
 	        ErrorReponse error 	= new ErrorReponse("Student", "sid", ex.getMessage());
 	        return new ResponseEntity<>(error, HttpStatus.NOT_FOUND);
 	    }
-
-
 	    @ExceptionHandler(Exception.class)
 	    public ResponseEntity<ErrorReponse> handleGenericException(Exception ex) {
-	        ErrorReponse error = new ErrorReponse("Unknown", "Unknown", ex.getMessage());
+	        ErrorReponse error = new ErrorReponse("SpringJWt", "Unknown", ex.getMessage());
 	        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
 	    }
 	    @ExceptionHandler(UsersNotFound.class)
