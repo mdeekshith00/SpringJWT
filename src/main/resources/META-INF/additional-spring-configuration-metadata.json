@@ -1,0 +1,5 @@
+{"properties": [{
+  "name": "springframework.beans.factory.annotation.Autowired",
+  "type": "java.lang.String",
+  "description": "A description for 'springframework.beans.factory.annotation.Autowired'"
+}]}
