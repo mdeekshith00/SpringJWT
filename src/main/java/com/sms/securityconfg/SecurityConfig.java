@@ -1,4 +1,4 @@
-package com.sms.securityconfg;
+ package com.sms.securityconfg;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

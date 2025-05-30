@@ -1,4 +1,4 @@
-package com.sms.Dto;
+package com.sms.dto;
 
 public class UsersDto {
 
